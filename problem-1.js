@@ -1,16 +1,17 @@
 // Problem 1
 // Number return function
 function cubeNumber(number) {
-  const result = number ** 3;
-  return result;
+  if (typeof number === 'number') {
+    const result = number ** 3;
+    return result;
+  }
+  else{
+    return "It should be number"
+  }
 }
 console.log(cubeNumber(5));
+console.log(cubeNumber("Tanvir"));
 
-// string return function
-function cubeNumber(text) {
-  return text;
-}
-console.log(cubeNumber("Allah, please give me, that i really need"));
 
 // problem 2
 function matchFinder(string1, string2) {
@@ -29,7 +30,6 @@ function matchFinder(string1, string2) {
 
 console.log(matchFinder("John Doe", "ohn"));
 console.log(matchFinder("JavaScript", "Code"));
-
 
 // // problem 3
 function sortMaker(arr) {
@@ -50,8 +50,10 @@ function sortMaker(arr) {
   return arranged;
 }
 
-let arrayNumbers = [3, 5];
-console.log(sortMaker(arrayNumbers));
+// let arrayNumbers = ;
+console.log(sortMaker([3, 5]));
+console.log(sortMaker([8, 3]));
+console.log(sortMaker([6, 6]));
+console.log(sortMaker([7, -2]));
 
 
-// git remote add origin https://github.com/tayeb012/no-1-js-assingment.git
