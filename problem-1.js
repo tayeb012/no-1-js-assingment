@@ -1,24 +1,15 @@
-// Problem 1
-// Number return function
 function cubeNumber(number) {
-  if (typeof number === 'number') {
+  if (typeof number === "number") {
     const result = number ** 3;
     return result;
-  }
-  else{
-    return "It should be number"
+  } else {
+    return "It should be number";
   }
 }
-console.log(cubeNumber(5));
-console.log(cubeNumber("Tanvir"));
 
-
-// problem 2
 function matchFinder(string1, string2) {
-  if (typeof string1 === "string" && typeof string2 === "string") {
-    return true;
-  } else {
-    console.log("this two parameter should be string ");
+  if (typeof string1 !== "string" || typeof string2 !== "string") {
+    return "This two parameter should be string";
   }
 
   if (string1.includes(string2)) {
@@ -28,32 +19,40 @@ function matchFinder(string1, string2) {
   }
 }
 
-console.log(matchFinder("John Doe", "ohn"));
-console.log(matchFinder("JavaScript", "Code"));
-
-// // problem 3
 function sortMaker(arr) {
+  if (!Array.isArray(arr)) {
+    return "Invalid Input";
+  }
   const firstNumber = arr[0];
   const secondNumber = arr[1];
-  let arranged = [];
 
   if (firstNumber < secondNumber) {
-    arranged.push(secondNumber, firstNumber);
+    return [secondNumber, firstNumber];
   } else if (firstNumber === secondNumber) {
-    arranged.push("equal");
+    return "equal";
   } else if (firstNumber < 0 || secondNumber < 0) {
-    arranged.push("Invalid Input");
+    return "Invalid Input";
   } else {
-    arranged.push(firstNumber, secondNumber);
+    return [firstNumber, secondNumber];
   }
-
-  return arranged;
 }
 
-// let arrayNumbers = ;
-console.log(sortMaker([3, 5]));
-console.log(sortMaker([8, 3]));
-console.log(sortMaker([6, 6]));
-console.log(sortMaker([7, -2]));
-
-
+function findAddress(obj) {
+  let output = "";
+  if (obj.hasOwnProperty("street")) {
+    output += obj.street + ",";
+  } else {
+    output += "__,";
+  }
+  if (obj.hasOwnProperty("house")) {
+    output += obj.house + ",";
+  } else {
+    output += "__,";
+  }
+  if (obj.hasOwnProperty("society")) {
+    output += obj.society;
+  } else {
+    output += "__";
+  }
+  return output;
+}
