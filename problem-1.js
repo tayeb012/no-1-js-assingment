@@ -56,3 +56,18 @@ function findAddress(obj) {
   }
   return output;
 }
+
+function canPay(changeArray, totalDue) {
+  if (!Array.isArray(changeArray)) {
+    return "You should input array";
+  }
+  let sum = 0;
+  for (let i = 0; i < changeArray.length; i++) {
+    sum = sum + changeArray[i];
+  }
+  if (sum >= totalDue) {
+    return true;
+  } else {
+    return false;
+  }
+}
